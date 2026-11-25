@@ -18,3 +18,15 @@ build/
 
 # Generated files
 __builtins__.pyi
+
+
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs and coverage
+*.log
+.coverage
+htmlcov/
