@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Databricks local state
+.databricks/
+
+# IDE
+.idea/
+
+# Generated files
+__builtins__.pyi

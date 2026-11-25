@@ -1,0 +1,77 @@
+bundle:
+  name: banking_lakehouse
+  uuid: bfda1ebf-538c-4a2c-9bfc-5cbb61b2702b
+
+include:
+  - resources/*.yml
+  - resources/**/*.yml
+
+variables:
+
+  catalog:
+    description: Unity Catalog catalog for the environment
+
+  landing_schema:
+    description: Landing schema
+
+  bronze_schema:
+    description: Bronze schema
+
+  silver_schema:
+    description: Silver schema
+
+  gold_schema:
+    description: Gold schema
+
+  ops_schema:
+    description: Operations schema
+
+
+targets:
+
+  validation:
+    mode: development
+
+    workspace:
+      host: https://dbc-0c216c5a-30d7.cloud.databricks.com
+
+    variables:
+      catalog: banking_validation
+      landing_schema: landing
+      bronze_schema: bronze
+      silver_schema: silver
+      gold_schema: gold
+      ops_schema: ops
+
+
+  dev:
+    mode: development
+    default: true
+
+    workspace:
+      host: https://dbc-0c216c5a-30d7.cloud.databricks.com
+
+    variables:
+      catalog: banking_dev
+      landing_schema: landing
+      bronze_schema: bronze
+      silver_schema: silver
+      gold_schema: gold
+      ops_schema: ops
+
+
+  prod:
+    mode: production
+
+    workspace:
+      host: https://dbc-0c216c5a-30d7.cloud.databricks.com
+
+    variables:
+      catalog: banking_prod
+      landing_schema: landing
+      bronze_schema: bronze
+      silver_schema: silver
+      gold_schema: gold
+      ops_schema: ops
+
+  
